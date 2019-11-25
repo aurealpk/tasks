@@ -1,0 +1,13 @@
+POST localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "createDate": "2019-11-22"
+}
+
+###
+GET localhost:8080
+
+###

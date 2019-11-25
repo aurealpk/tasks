@@ -1,0 +1,142 @@
+GET http://localhost:8080
+
+<> 2019-11-25T102941.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "createDate": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "createDate": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "createDate": "22-11-2019"
+}
+
+<> 2019-11-25T102755.400.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "createDate": "22.11.2019"
+}
+
+<> 2019-11-25T102723.400.json
+
+###
+
+GET http://localhost:8080
+
+<> 2019-11-25T102554.200.json
+
+###
+
+GET http://localhost:8080
+
+<> 2019-11-25T093353.200.json
+
+###
+
+GET http://localhost:8080
+
+<> 2019-11-25T093135.200.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Zrobić zadanie z modułu 2"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Zrobić zadanie z modułu 2"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Dokończyć lekcję 13 kursu o Springu"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Dokończyć lekcję 13 kursu o Springu"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Dokończyć lekcję 13 kursu o Springu"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Dokończyć lekcję 13 kursu o Springu"
+}
+
+###
+
+POST http://localhost:8080
+
+{
+   "title": "Dokończyć lekcję 13 kursu o Springu"
+}
+
+###
+
+POST http://localhost:8080
+
+{
+   "title": "Dokończyć lekcję 13 kursu o Springu"
+}
+
+###
+

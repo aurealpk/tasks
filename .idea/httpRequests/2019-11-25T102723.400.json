@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-11-25T21:27:23.237+0000",
+  "status": 400,
+  "error": "Bad Request",
+  "message": "JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String \"22.11.2019\": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '22.11.2019' could not be parsed at index 0; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDate` from String \"22.11.2019\": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '22.11.2019' could not be parsed at index 0\n at [Source: (PushbackInputStream); line: 4, column: 18] (through reference chain: pl.sztukakodu.tasktree.tasks.Task[\"createDate\"])",
+  "path": "/"
+}

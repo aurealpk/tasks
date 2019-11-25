@@ -8,7 +8,7 @@
 		<version>2.2.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>pl.sztukakodu.tasks</groupId>
+	<groupId>pl.sztukakodu.tasktree.tasks</groupId>
 	<artifactId>tasks</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tasks</name>

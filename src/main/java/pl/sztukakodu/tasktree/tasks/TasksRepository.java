@@ -1,8 +1,8 @@
-package pl.sztukakodu.tasks;
+package pl.sztukakodu.tasktree.tasks;
 
 import java.util.List;
 
-public interface TasksRepository {
+public interface  TasksRepository {
 
     void add(Task task);
 

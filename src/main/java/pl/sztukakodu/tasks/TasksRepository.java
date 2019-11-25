@@ -2,9 +2,9 @@ package pl.sztukakodu.tasks;
 
 import java.util.List;
 
-public interface TaskRepository {
+public interface TasksRepository {
 
-    void add();
+    void add(Task task);
 
     List<Task> fetchAll();
 

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConfigurationProperties(prefix = "app.tasks")
-public class TaskConfig {
+public class TasksConfig {
 
     private String endpointMessage;
 

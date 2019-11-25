@@ -1,4 +1,4 @@
-package pl.sztukakodu.tasktree.tasks;
+package pl.sztukakodu.TaskTreeApp.tasks;
 
 import lombok.Data;
 

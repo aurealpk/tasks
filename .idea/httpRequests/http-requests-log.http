@@ -1,3 +1,36 @@
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "createDate": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "createDate": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "createDate": "2019-11-22"
+}
+
+###
+
 GET http://localhost:8080
 
 <> 2019-11-25T102941.200.json

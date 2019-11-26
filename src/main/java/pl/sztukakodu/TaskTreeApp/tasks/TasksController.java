@@ -11,9 +11,11 @@ import java.util.List;
 public class TasksController {
 
     private final TasksRepository tasksRepository;
+    private final TasksConfig config;
 
-    public TasksController(TasksRepository tasksRepository) {
+    public TasksController(TasksRepository tasksRepository, TasksConfig config) {
         this.tasksRepository = tasksRepository;
+        this.config = config;
     }
 
     @GetMapping
@@ -21,10 +23,17 @@ public class TasksController {
         log.info("Fetching all tasks...");
         return tasksRepository.fetchAll();
     }
+    @GetMapping(path = "/hello")
+    public String getMessage() {
+        log.info("Message");
+        return config.getEndpointMessage();
+    }
 
     @PostMapping
     public void addTask(@RequestBody Task task) {
         log.info("Storing new task: {}", task );
         tasksRepository.add(task);
     }
+
+
 }

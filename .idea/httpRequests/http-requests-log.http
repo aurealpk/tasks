@@ -1,3 +1,345 @@
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+"title": "Zrobić zadanie z modułu 2",
+"description": "Coś dodane"
+}
+
+###
+
+DELETE http://localhost:8080/api/tasks/1
+
+###
+
+DELETE http://localhost:8080/api/tasks/1
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+  "id": 3,
+  "title": "Zrobić zadanie z modułu 2",
+  "author": "Jaś i Małgosia",
+  "date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+"id": 2,
+"title": "Zrobić zadanie z modułu 2",
+"author": "Jaś i Małgosia",
+"date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+   "id": 1,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+DELETE http://localhost:8080/api/tasks/1
+
+<> 2019-11-28T091703.500.json
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+   "id": 1,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+   "id": 2,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+   "id": 3,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+GET http://localhost:8080/api/tasks/1
+
+<> 2019-11-28T085347.200.json
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+   "id": 3,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+   "id": 1,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+   "id": 2,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+GET http://localhost:8080/api/tasks/1
+
+<> 2019-11-28T084931.500.json
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+   "id": 2,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+   "id": 1,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+   "id": 3,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+GET http://localhost:8080/api/tasks/1
+
+<> 2019-11-28T084804.404.json
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+   "id": 3,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+   "id": 2,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+   "id": 2,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+   "id": 1,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "id": 1,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+<> 2019-11-28T084545.404.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "id": 2,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+<> 2019-11-28T084540.404.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "id": 3,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+<> 2019-11-28T084535.404.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "id": 3,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "id": 2,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "id": 1,
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "date": "2019-11-22"
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+   "title": "Zrobić zadanie z modułu 2",
+   "author": "Jaś i Małgosia",
+   "createDate": "2019-11-22"
+}
+
+###
+
+PUT http://localhost:8080
+
+###
+
+DELETE http://localhost:8080
+
+###
+
 POST http://localhost:8080
 Content-Type: application/json
 
@@ -150,22 +492,6 @@ Content-Type: application/json
 
 POST http://localhost:8080
 Content-Type: application/json
-
-{
-   "title": "Dokończyć lekcję 13 kursu o Springu"
-}
-
-###
-
-POST http://localhost:8080
-
-{
-   "title": "Dokończyć lekcję 13 kursu o Springu"
-}
-
-###
-
-POST http://localhost:8080
 
 {
    "title": "Dokończyć lekcję 13 kursu o Springu"

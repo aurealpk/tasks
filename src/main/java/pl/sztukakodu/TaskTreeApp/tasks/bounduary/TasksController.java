@@ -66,9 +66,11 @@ public class TasksController {
         tasksRepository.deleteTask(id);
     }
 
-    @PutMapping
-    public void updateTask(){
-        log.info("Updating task");
+    @PutMapping(path = "/{id}")
+    public void updateTask(@PathVariable Long id, @RequestBody UpdateTaskRequest request)
+    {
+        log.info("Updating task o id", id);
+        tasksService.updateTask(id, request.title, request.description);
     }
 
     private TaskResponse toTaskResponse(Task task) {

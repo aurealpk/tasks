@@ -20,6 +20,12 @@ DELETE  localhost:8080/api/tasks/1
 
 ###
 
-PUT localhost:8080/api/tasks
+PUT localhost:8080/api/tasks/1
+Content-Type: application/json
+
+{
+  "title": "Zrobić zadanie z modułu 3 po update",
+  "description": "Coś dodane po update"
+}
 
 ###

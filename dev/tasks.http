@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
 "title": "Zrobić zadanie z modułu 2",
-"description": "Coś dodane"
+"description": "Coś dodane lekcje"
 }
 
 ###
@@ -16,7 +16,7 @@ GET localhost:8080/api/tasks/1
 
 ###
 
-DELETE  localhost:8080/api/tasks/1
+DELETE  localhost:8080/api/tasks/10
 
 ###
 

@@ -1,14 +1,17 @@
 package pl.sztukakodu.TaskTreeApp.tasks.bounduary;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.sztukakodu.TaskTreeApp.tasks.TasksConfig;
 import pl.sztukakodu.TaskTreeApp.tasks.control.TasksService;
 import pl.sztukakodu.TaskTreeApp.tasks.entity.Task;
+import pl.sztukakodu.TaskTreeApp.tasks.exceptions.NotFoundExcpetion;
 
 import javax.annotation.PostConstruct;
-import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -34,11 +37,12 @@ public class TasksController {
     }
 
     @GetMapping
-    public List<TaskResponse> getTasks() {
-        log.info("Fetching all tasks...");
-        return tasksRepository.fetchAll()
+    public List<TaskResponse> getTasks(@RequestParam Optional<String> query) {
+        log.info("Fetching all tasks... by query: {}", query);
+        return query.map(q -> tasksService.filterAllByQuery(q))
+                .orElseGet(() -> tasksService.fetchAll())
                 .stream()
-                .map(this::toTaskResponse)
+                .map(task -> toTaskResponse(task))
                 .collect(Collectors.toList());
     }
 
@@ -49,39 +53,56 @@ public class TasksController {
     }
 
     @GetMapping(path = "/{id}")
-    public TaskResponse getTaskById(@PathVariable Long id) {
-        log.info("Fetch Task by id {}", id);
-        return toTaskResponse(tasksRepository.fetchTaskById(id));
+    public ResponseEntity getTaskById(@PathVariable Long id) {
+        try {
+            log.info("Fetch Task by id {}", id);
+            return ResponseEntity.status(HttpStatus.OK).body(toTaskResponse(tasksService.fetchTaskById(id)));
+        } catch (IllegalArgumentException e) {
+            log.info("Not found task {}", id);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
     }
 
     @PostMapping
-    public void addTask(@RequestBody CreateTaskRequest task) {
-        log.info("Storing new task: {}", task );
-        tasksService.addTask(task.title, task.description);
+    public ResponseEntity addTask(@RequestBody CreateTaskRequest task) {
+            log.info("Storing new task: {}", task );
+            tasksService.addTask(task.title, task.description);
+            return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @DeleteMapping(path = "/{id}")
-    public void deleteTask(@PathVariable Long id){
-        log.info("Deleting task by id {}", id);
-        tasksRepository.deleteTask(id);
+    public ResponseEntity deleteTask(@PathVariable Long id){
+        try {
+            log.info("Deleting task by id {}", id);
+            tasksService.deleteTask(id);
+            return ResponseEntity.ok().build();
+        } catch (NotFoundExcpetion e){
+            log.info("Failed to delete task {} exception {}",id, e);
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .body(e.getMessage());
+        }
     }
 
     @PutMapping(path = "/{id}")
-    public void updateTask(@PathVariable Long id, @RequestBody UpdateTaskRequest request)
-    {
-        log.info("Updating task o id", id);
-        tasksService.updateTask(id, request.title, request.description);
+    public ResponseEntity updateTask(@PathVariable Long id, @RequestBody UpdateTaskRequest request) {
+        try {
+            log.info("Updating task o id", id);
+            tasksService.updateTask(id, request.title, request.description);
+            return ResponseEntity.noContent().build();
+        } catch (NotFoundExcpetion e) {
+            log.error("Failed to update task {}", id);
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .body(e.getMessage());
+        }
     }
-
     private TaskResponse toTaskResponse(Task task) {
         return new TaskResponse(
                 task.getId(),
                 task.getTitle(),
                 task.getDescription(),
-                LocalDateTime.now()
+                task.getCreatedAt()
         );
     }
-
-
-
 }

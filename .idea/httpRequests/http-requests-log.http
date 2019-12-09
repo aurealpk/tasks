@@ -1,3 +1,75 @@
+DELETE http://localhost:8080/api/tasks/10
+
+###
+
+DELETE http://localhost:8080/api/tasks/10
+
+###
+
+DELETE http://localhost:8080/api/tasks/1
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+"title": "Zrobić zadanie z modułu 2",
+"description": "Coś dodane lekcje"
+}
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+"title": "Zrobić zadanie z modułu 2",
+"description": "Coś dodane lekcje"
+}
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+"title": "Zrobić lekcje z modułu 2",
+"description": "Coś dodane"
+}
+
+###
+
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+"title": "Zrobić zadanie z modułu 2",
+"description": "Coś dodane"
+}
+
+###
+
+PUT http://localhost:8080/api/tasks/1
+Content-Type: application/json
+
+{
+  "title": "Zrobić zadanie z modułu 3 po update",
+  "description": "Coś dodane po update"
+}
+
+###
+
+PUT http://localhost:8080/api/tasks/1
+Content-Type: application/json
+
+{
+  "title": "Zrobić zadanie z modułu 3 po update",
+  "description": "Coś dodane po update"
+}
+
+###
+
 POST http://localhost:8080/api/tasks
 Content-Type: application/json
 
@@ -424,78 +496,6 @@ Content-Type: application/json
 }
 
 <> 2019-11-25T102723.400.json
-
-###
-
-GET http://localhost:8080
-
-<> 2019-11-25T102554.200.json
-
-###
-
-GET http://localhost:8080
-
-<> 2019-11-25T093353.200.json
-
-###
-
-GET http://localhost:8080
-
-<> 2019-11-25T093135.200.json
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-   "title": "Zrobić zadanie z modułu 2"
-}
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-   "title": "Zrobić zadanie z modułu 2"
-}
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-   "title": "Dokończyć lekcję 13 kursu o Springu"
-}
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-   "title": "Dokończyć lekcję 13 kursu o Springu"
-}
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-   "title": "Dokończyć lekcję 13 kursu o Springu"
-}
-
-###
-
-POST http://localhost:8080
-Content-Type: application/json
-
-{
-   "title": "Dokończyć lekcję 13 kursu o Springu"
-}
 
 ###
 

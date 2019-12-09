@@ -2,6 +2,7 @@ package pl.sztukakodu.TaskTreeApp.tasks.bounduary;
 
 import org.springframework.stereotype.Component;
 import pl.sztukakodu.TaskTreeApp.tasks.entity.Task;
+import pl.sztukakodu.TaskTreeApp.tasks.exceptions.NotFoundExcpetion;
 
 import java.util.*;
 
@@ -33,10 +34,10 @@ public class MemoryTasksRepository implements TasksRepository {
 
     @Override
     public void update(Long id, String title, String description) {
-        findById(id).ifPresent(task -> {
-                    task.setTitle(title);
-                    task.setDescription(description);
-                });
+        Task task = findById(id)
+                .orElseThrow(() -> new NotFoundExcpetion("Taski with id not found: " + id));
+        task.setTitle(title);
+        task.setDescription(description);
     }
 
     private Optional<Task> findById(Long id) {

@@ -1,15 +1,22 @@
 package pl.sztukakodu.TaskTreeApp.tasks.bounduary;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import pl.sztukakodu.TaskTreeApp.tasks.TasksConfig;
 import pl.sztukakodu.TaskTreeApp.tasks.control.TasksService;
 import pl.sztukakodu.TaskTreeApp.tasks.entity.Task;
 import pl.sztukakodu.TaskTreeApp.tasks.exceptions.NotFoundExcpetion;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -17,17 +24,13 @@ import java.util.stream.Collectors;
 @Slf4j
 @RestController
 @RequestMapping(path = "/api/tasks")
+@RequiredArgsConstructor
 public class TasksController {
 
+    private final StorageService storageService;
     private final TasksRepository tasksRepository;
     private final TasksService tasksService;
     private final TasksConfig config;
-
-    public TasksController(TasksRepository tasksRepository, TasksService tasksService, TasksConfig config) {
-        this.tasksRepository = tasksRepository;
-        this.tasksService = tasksService;
-        this.config = config;
-    }
 
     @PostConstruct
     private void init() {
@@ -61,6 +64,28 @@ public class TasksController {
             log.info("Not found task {}", id);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         }
+    }
+
+    @GetMapping(path = "/{id}/attachments/{filename}")
+    public ResponseEntity getTaskById(
+            @PathVariable Long id, @PathVariable String filename,
+            HttpServletRequest request) throws IOException {
+        Resource resource = storageService.loadFile(filename);
+        String mimeType = request.getServletContext().getMimeType(resource.getFile().getAbsolutePath());
+        if(mimeType == null){
+            mimeType = "application/octet-stream";
+        }
+        return ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType((mimeType)))
+                .body(resource);
+    }
+
+    @PostMapping(path = "/{id}/attachments")
+    public ResponseEntity getTaskById(
+            @PathVariable Long id, @RequestParam("file") MultipartFile file) throws IOException {
+        log.info("Handling file upload... {}", file.getName());
+        storageService.saveFile(id, file);
+        return ResponseEntity.noContent().build();
     }
 
     @PostMapping
